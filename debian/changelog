@@ -1,3 +1,190 @@
+mintreport (1.1.7) ulyana; urgency=medium
+
+  [ theshoals ]
+  * Add a missing 'time' import
+  * Lazily initialize cache data from apt
+
+  [ Clement Lefebvre ]
+  * Fix deprecation in Mint 20
+  * Fix GTK warnings
+  * Update README.md
+  * l10n: Update translations
+  * l10n: Generate desktop files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 May 2020 11:50:03 +0100
+
+mintreport (1.1.6) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * 900_drivers: Handle missing vendor/model info more gracefully.
+  * all: rename async wrapper, in python 3.7+ it is a keyword to define coroutines.
+
+  [ Clement Lefebvre ]
+  * 900_drivers: Ignore devices marked as manual_install
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 15 Jan 2020 16:39:03 +0000
+
+mintreport (1.1.5) tricia; urgency=medium
+
+  * l10n: Update translations
+  * l10n: Update files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Jan 2020 10:57:30 +0000
+
+mintreport (1.1.4) tricia; urgency=medium
+
+  * Remove root password check
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 28 Dec 2019 13:15:07 +0000
+
+mintreport (1.1.3) tricia; urgency=medium
+
+  * Root password: Make dismissing the report less confusing
+  * l10n: Update POT
+  * l10n: Update translations
+  * l10n: Generate files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 11 Dec 2019 14:10:17 +0000
+
+mintreport (1.1.2) tricia; urgency=medium
+
+  * Drivers: Ignore VMware and Virtualbox recommendations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 Dec 2019 15:59:40 +0000
+
+mintreport (1.1.1) tricia; urgency=medium
+
+  * l10n: Update translations
+  * l10n: Generate files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Nov 2019 17:31:35 +0000
+
+mintreport (1.1.0) tricia; urgency=medium
+
+  * Modernize info reports system
+  * UI: Move info reports above crash reports
+  * Remove obsolete file
+  * l10n: Update POT
+  * Info reports: Reload after an action is clicked
+  * Turn the app into an autolaunched singleton with a status tray
+  * Add a menubar
+  * Exit in tray mode when no info reports are present
+  * UI: Fix stack right-margin
+  * Build: Inject version number in about dialog
+  * Fix tray mode showing window on current instance
+  * Fix process checks
+  * Split tray and window processes
+  * UI: Move info reports to top
+  * UI: Don't use needs-attention
+  * Reword info reports tab and use a warning icon
+  * Restore the ability to ignore reports
+  * Tray: Ignore ignored reports
+  * tray: Don't waste time if there are more than 1 pertinent report..
+  * Create an abstract class for reports to extend
+  * Add a report to check missing language packs
+  * l10n: Update POT
+  * Add test and define gtk version in some of the reports
+  * Start implementing reports for missing root password and drivers
+  * Finish implementation of the drivers report
+  * Let reports tell the app whether or not to reload
+  * Load reports alphabetically
+  * Prefix reports and use uuids for the ignore list
+  * Let user refresh infor reports
+  * Let user restore ignored reports
+  * Reload everything when refreshing
+  * Add a spinner and a done page
+  * Finish implementing the root password report
+  * UI: Give the reports viewport the view style
+  * Select the first report
+  * Add a report to check for new releases
+  * Add a report to detect release EOL
+  * l10n: Don't put markup in msgid
+  * Remove obsolete file
+  * Don't run tray in live and guest sessions
+  * Cleanup imports
+  * l10n: Update POT
+  * Cleanup imports
+  * Fix load_info only running twice
+  * Make autorefresh rate configurable in gsettings
+  * Fixes in EOL and drivers checks
+  * Add a loading label
+  * Move gettext domain path to /usr/share/locale
+  * l10n: Update POT
+  * l10n: Add translations
+  * UI: Make the spinner bigger
+  * StatusIcon: Use newer signals
+  * InfoReport: Add a data argument into the callback
+  * Remove obsolete HTML resources
+  * Remove obsolete code
+  * Add a test to check the presence of an Xapp Status applet
+  * Let mintreport work without XAppStatusIcon
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 13 Nov 2019 17:28:56 +0100
+
+mintreport (1.0.9) tina; urgency=medium
+
+  * Remove f-strings
+  * install-media-codecs: Fix pkg name in LMDE
+  * Remove python3.6 code
+  * Fix coredumpctl call in LMDE
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 05 Aug 2019 11:02:34 +0200
+
+mintreport (1.0.8) tina; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Coredump: Don't check subprocess.run when calling coredumpctl
+
+  [ JosephMcc ]
+  * ui: Don't use scaled down text (#26)
+
+  [ Stephen Collins ]
+  * Crash report: sort timestamp properly (#28)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 30 Jun 2019 15:26:57 +0200
+
+mintreport (1.0.7) tina; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Add a system info page
+  * UI: Use an XAppStackSidebar
+  * Packaging: Depend on inxi
+  * l10n: Update POT
+  * UI: Make window wider and ask inxi not to split output
+  * Sysinfo: Handle errors around subprocess.check_output()
+  * Sysinfo: On upload copy link to clipboard instead of launching the browser
+  * Sysinfo: Add bbcode code tags when copying content
+  * Sysinfo: Add more info into some of the msgids
+  * l10n: Update POT
+  * Fix generate_desktop_files
+  * Switch to systemd-coredump for crash reports
+  * Don't depend on systemd-coredump
+  * Add inxi output to error report
+
+  [ Noah Wood ]
+  * Fixed spelling error (#23)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+  * Store inxi output in a tmp file
+  * Add --usb flag to inxi call
+  * l10n: Fix msgid
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 Mar 2019 14:27:37 +0000
+
+mintreport (1.0.6) tara; urgency=medium
+
+  [ monsta ]
+  * count eom as MATE package, not eog (#5)
+
+  [ Clement Lefebvre ]
+  * Timeshift: Use pkexec
+  * l10n: Update files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 May 2018 12:15:48 +0100
+
 mintreport (1.0.5) sylvia; urgency=medium
 
   * Add missing dependency on gir1.2-webkit-3.0

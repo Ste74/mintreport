@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 
 DOMAIN = "mintreport"
-PATH = "/usr/share/linuxmint/locale"
+PATH = "/usr/share/locale"
 
 import os
 import gettext
-import sys
-sys.path.append('/usr/lib/linuxmint/common')
-import additionalfiles
+from mintcommon import additionalfiles
 
 os.environ['LANGUAGE'] = "en_US.UTF-8"
 gettext.install(DOMAIN, PATH)
@@ -28,6 +26,20 @@ additionalfiles.generate(DOMAIN, PATH, "usr/share/applications/mintreport.deskto
 
 prefix = "[Desktop Entry]\n"
 
+suffix = """Exec=mintreport-tray
+Icon=mintreport
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Application;System;Settings;
+StartupNotify=false
+NoDisplay=true
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "usr/share/applications/mintreport-tray.desktop", prefix, _("System Reports"), _("Troubleshoot problems"), suffix)
+
+prefix = "[Desktop Entry]\n"
+
 suffix = """Exec=mintreport
 Icon=mintreport
 Terminal=false
@@ -39,3 +51,18 @@ OnlyShowIn=KDE;
 """
 
 additionalfiles.generate(DOMAIN, PATH, "usr/share/applications/kde4/mintreport.desktop", prefix, _("System Reports"), _("Troubleshoot problems"), suffix, genericName=_("Troubleshooting Tool"))
+
+prefix = """[Desktop Entry]
+Encoding=UTF-8\n"""
+
+suffix = """Exec=mintreport-tray
+Icon=mintreport
+Terminal=false
+Type=Application
+Categories=
+X-GNOME-Autostart-Delay=40
+X-MATE-Autostart-Delay=40
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "etc/xdg/autostart/mintreport.desktop", prefix, _("System Reports"), _("Troubleshoot problems"), suffix)
+
